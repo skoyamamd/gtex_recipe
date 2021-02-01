@@ -1,3 +1,11 @@
-wget https://raw.githubusercontent.com/broadinstitute/gtex-pipeline/master/rnaseq/Dockerfile -O ../dockerfile/gtex_v9.dockerfile
-spython recipe ../dockerfile/gtex_v9.dockerfile > ../recipe/Singularity.v9
+git clone https://github.com/broadinstitute/gtex-pipeline.git
+
+cd ./gtex-pipeline/rnaseq
+
+git checkout master
+spython recipe Dockerfile > ../../../recipe/Singularity.rnaseq.v9
+
+git checkout -b b_gtex_v8 gtex_v8
+spython recipe Dockerfile > ../../../recipe/Singularity.rnaseq.v8
+
 
